@@ -134,7 +134,7 @@ def name4(m):
         start(m)
     else:
         global j
-        msg = bot.send_message(m.chat.id, "Вы записаны в отделение " + m.text)
+        msg = bot.send_message(m.chat.id, "Вы записаны в отделение " + m.text +". Ваш номер " + str(j))
         conn = sqlite3.connect('/Users/apple/PycharmProjects/Usib/uralsib.db')
         cursor = conn.cursor()
         cursor.execute("UPDATE clients SET adress = '{}' WHERE id = {}".format(m.text, j))
